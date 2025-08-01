@@ -1,4 +1,74 @@
-.test{
-    background-color: blue;
-    color: brown;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #fddde6, #d5e1f2);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.message {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.pet-box {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pet-box:active {
+  transform: scale(0.95);
+}
+
+.pet-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Bounce effect */
+.bounce {
+  animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-10px); }
+  60%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
