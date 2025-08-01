@@ -15,10 +15,10 @@ const messages = [
 
 // Map scores to image filenames
 const petImages = {
-  1: "images\cat_angry.jpg",
-  2: "images\cat_sad.jpg",
-  3: "images\cat_with_bouqet.jpg",
-  4: "images\cat_panty.jpg"
+  1: "QueryJoe_Portfolio_WebDevelopment\images\cat_sad.jpg",
+  2: "QueryJoe_Portfolio_WebDevelopment\images\cat_sad.jpg",
+  3: "QueryJoe_Portfolio_WebDevelopment\images\cat_with_bouqet.jpg",
+  4: "QueryJoe_Portfolio_WebDevelopment\images\cat_panty.jpg"
 };
 
 petBox.addEventListener('click', () => {
