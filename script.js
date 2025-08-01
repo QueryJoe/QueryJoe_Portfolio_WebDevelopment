@@ -15,10 +15,10 @@ const messages = [
 
 // Map scores to image filenames
 const petImages = {
-  1: "cat_sad.jpg",
-  2: "cat_angry.jpg",
-  3: "cat_nerd.jpg",
-  4: "cat_sad.jpg"
+  1: "images\cat_angry.jpg",
+  2: "images\cat_sad.jpg",
+  3: "images\cat_with_bouqet.jpg",
+  4: "images\cat_panty.jpg"
 };
 
 petBox.addEventListener('click', () => {
@@ -38,7 +38,7 @@ petBox.addEventListener('click', () => {
     messageBox.textContent = random.text;
 
     // Change the pet image based on score
-    const newImage = "/images/" + petImages[random.score] || 'pet_default.png';
+    const newImage = petImages[random.score] || 'pet_default.png';
     console.log(newImage);
     petImage.src = newImage;
 
