@@ -38,8 +38,9 @@ petBox.addEventListener('click', () => {
     messageBox.textContent = random.text;
 
     // Change the pet image based on score
-    const newImage = petImages[random.score] || 'pet_default.png';
-    petImage.src = "/images/" + newImage;
+    const newImage = "/images/" + petImages[random.score] || 'pet_default.png';
+    console.log(newImage);
+    petImage.src = newImage;
 
     // Fade in message
     messageBox.style.opacity = 1;
