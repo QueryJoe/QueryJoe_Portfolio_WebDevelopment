@@ -16,7 +16,6 @@ function playSound(opt) {
       pet.play()
       break;
     case "click":
-      console.log("pet")
       click.play()
       break;
     case "paper":
@@ -178,6 +177,7 @@ let pomodoroTime = 0;
 let pomodoroInterval = null;
 let onBreak = false;
 let pause = false;
+let pomodoroSessionLength = 0;
 
 function updatePomodoroStatus() {
    const statusEl = document.getElementById('pomodoro-status');
