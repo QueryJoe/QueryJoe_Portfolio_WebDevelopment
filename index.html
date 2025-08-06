@@ -3,16 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I'm Sorry 🐶❤️</title>
+  <title>Nusaiba's productive Web-app</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<nav>
+  <h3>Have A Amazing productive day!</h3>
+  <div>
+    <p><span id="current-time"></span></p>
+  </div>
+</nav>
 <body>
-  <div class="container">
-    <div class="message" id="messageBox">Click the pet to see a message!</div>
-    <div class="pet-box" id="petBox">
-      <img src="pet_default.png" alt="Pet" id="petImage">
+  <div id="alert-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="alert-text">This is an alert message.</p>
+      <button onclick="closeAlertModal()" class="close-btn">Close</button>
     </div>
   </div>
+
+  <section class="layout-grid">
+    <div class="timer-Container">
+      <div class="timer-nav">
+        <button class="tab-btn active click-snd" id="stopwatch-tab-btn" onclick="showTab('stopwatch', 'stopwatch-tab-btn')">Stopwatch</button>
+        <button class="tab-btn click-snd" id="pomodoro-tab-btn" onclick="showTab('pomodoro', 'pomodoro-tab-btn')">Pomodoro</button>
+      </div>
+
+      <div class="tab-content" id="stopwatch">
+        <h1>STOPWATCH</h1>
+        <p>Keep track of your study hours!</p>
+        <div class="timer-display" id="stopwatchDisplay">00:00:00</div>
+        <div class="timer-controls">
+          <button id="start-btn" class="click-snd" onclick="startStopwatch()" >Start</button>
+          <button class="pause-btn click-snd"  id="pause-btn" onclick="pauseStopwatch()" >pause</button>
+          <button class="resume-btn hidden click-snd"  id="resume-btn" onclick="resumeStopwatch()">resume</button>
+          <button id="reset-btn" class="click-snd" onclick="resetStopwatch()" >Reset</button>
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="pomodoro">
+        <h1>POMODORO TIMER</h1>
+        <p>Select a session time and start studying!</p>
+        <div class="timer-display" id="pomodoroDisplay">00:00\</div>
+        <div id="pomodoro-status" class="pomodoro-status">
+          <img id="pomodoro-status-img" src="images/cat_study.jpg" alt="Status">
+          <span id="pomodoro-status-text">Study Session</span>
+        </div>
+        <div class="pomodoro-controls">
+          <button id="pomodoro-reset-btn" class="click-snd" onclick="resetPomodoro()" disabled>Reset</button>
+          <button class="pause-btn click-snd" id="pomodoro-pause-btn" onclick="pausePomodoro()" disabled>Pause</button>
+          <button class="resume-btn hidden click-snd" id="pomodoro-resume-btn" onclick="resumePomodoro()">Resume</button>
+        </div>
+        <div class="pomodoro-optns">
+          <button class="pomodoro-optn click-snd"  onclick="startPomodoro(0.1)">25 Minutes</button>
+          <button class="pomodoro-optn click-snd"  onclick="startPomodoro(45)">45 Minutes</button>
+          <button class="pomodoro-optn click-snd"  onclick="startPomodoro(60)">60 Minutes</button>
+        </div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="pet-container">
+        <div class="message" id="messageBox"></div>
+        <div class="pet-box" id="petBox">
+          <img src="images/cat_with_msg.jpg" alt="Pet" id="petImage">
+        </div>
+      </div>
+
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <h1>Calendar</h1>      
+        </div>
+        <div class="calendar-nav">
+          <button class="calendar-btn click-snd" onclick="prevMonth()">←</button>
+          <h2 id="month-year"></h2>
+          <button class="calendar-btn click-snd" onclick="nextMonth()">→</button>
+          <select id="yearSelect" onchange="changeYear()"></select>
+        </div>
+        <table class="calendar">
+          <thead>
+            <tr>
+              <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+              <th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="to-do-section">
+    <div class="todo-container">
+      <h1>📝 To-Do List</h1>
+      <div class="input-group">
+        <input type="text" id="todo-input" placeholder="Add a new task..." />
+        <button class="click-snd" id="add-btn">Add</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+  </section>
+  <section>
+    <img src="images/envalope.png" class="envelope-image" onclick="showMessageModal()" alt="Envelope">
+
+    <div class="paper-modal hidden" id="paperModal">
+      <div class="paper-content">
+        <button class="close-button" onclick="hideMessageModal()">X</button>
+        <div class="paper-text">
+          <p>
+            Hello pookie wookie my lil shayla
+            Hope you have found this web usefull cuz hell have i worked my butt off for this. and you better be gratefull you biyatch.
+            anyways, this is a message just for my shayla. I wanted to say that I have done some mistakes some stuff that i really regert to you. I have hurt you in many ways recently and before. Im a complete a-hole. I dont deserve someone like you pookie. I want to apoligise beg for forgiveness but what good will it do. I already hurt you I have already done what i hate the most.
+            <br>
+            i want the best for you pookie, so i want to be the best i can be. but in the process im becaming stiff and cold. yk when you chaged your pfp without asking me i wasnt actually mad. infact i ddint really feel much abt it but ik i had  reasons to feel mad abt it. idk how to explain. ik i dont wish you stuff and send you emotional and cute reels and stuff, idk i just havent been as expressive as i used to be. idk if its for good or worse, if im just becoming more rational or something else.
+            <br>
+            anyhow I want to say that i dont really wish you stuff like friendship days and gf days cuz reason is that i dont celebrate. and i really wish you dont get mad cuz of it. also yk how much i get worried and stressed when ppl like our teachers compare us and try to gaslight you into thing your autistic or something lmao (jhalak sir). I gett the feeling that you will start to hate me and see me in other ways, omg the urge to choke each one of them. 
+            <br>
+            anyways enjoy the website and tell me if you want anymore updates or features or face any bugs and stuff. ummahhhhhh i lub you beri much my shayla. 
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
